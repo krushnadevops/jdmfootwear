@@ -1,0 +1,473 @@
+/* Global Reset and Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  line-height: 1.6;
+  color: #333;
+  background: #fff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: red;
+}
+
+/* Header */
+.header {
+  background: #111;
+  color: white;
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.nav-links li a:hover {
+  color: red;
+}
+
+/* Hero Slider Section */
+.hero-slider {
+  position: relative;
+  height: 90vh;
+  background-size: cover;
+  background-position: center;
+  animation: slideImages 15s infinite ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+@keyframes slideImages {
+  0%, 100% {
+    background-image: url('images/hero2.jpg');
+  }
+  33% {
+    background-image: url('images/hero1.jpg');
+  }
+  66% {
+    background-image: url('images/hero3.jpg');
+  }
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+.hero-content {
+  text-align: center;
+  z-index: 1;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin: 15px 0 30px;
+}
+
+.hero-content .btn {
+  padding: 12px 28px;
+  font-size: 1rem;
+  background-color: red;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.hero-content .btn:hover {
+  background-color: #000;
+  transform: scale(1.05);
+}
+
+.scroll-down {
+  margin-top: 30px;
+  font-size: 24px;
+  animation: bounce 2s infinite;
+  color: white;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+/* Typewriter effect */
+.typewriter::after {
+  content: attr(data-text);
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid white;
+  animation: typing 4s steps(30, end) infinite, blink 0.7s infinite;
+}
+
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  40%, 60% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes blink {
+  0%, 100% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: white;
+  }
+}
+
+
+
+/* USP Section */
+.usp {
+  background: #f7f7f7;
+  padding: 40px 0;
+}
+
+.usp-items {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  gap: 10px;
+}
+
+.usp-items div {
+  flex: 1;
+}
+
+.usp i {
+  font-size: 30px;
+  color: red;
+}
+
+/* Categories */
+.categories {
+  padding: 60px 0;
+  background: #fff;
+  text-align: center;
+}
+
+.category-grid {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.category {
+  flex: 1;
+  background: #f5f5f5;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.category img {
+  max-width: 100%;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+/* Instagram Section */
+.instagram {
+  padding: 60px 0;
+  background: #f7f7f7;
+  text-align: center;
+}
+
+.insta-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.insta-grid img {
+  width: 100%;
+  border-radius: 6px;
+}
+
+/* Testimonials */
+.testimonials {
+  padding: 60px 0;
+  background: #fff;
+  text-align: center;
+}
+
+.reviews blockquote {
+  margin: 20px auto;
+  max-width: 600px;
+  font-style: italic;
+  border-left: 4px solid red;
+  padding-left: 15px;
+}
+
+/* Promo Banner */
+.promo-banner {
+  background: red;
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+/* Footer */
+.footer {
+  background: #111;
+  color: white;
+  padding: 40px 20px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-content h4,
+.footer-content h3 {
+  margin-bottom: 10px;
+}
+
+.footer-content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-content ul li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  margin: 5px 0;
+}
+
+.footer-content a:hover {
+  color: red;
+}
+
+.footer input {
+  padding: 10px;
+  width: 80%;
+  margin-top: 10px;
+}
+
+.footer button {
+  padding: 10px;
+  background: red;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.footer button:hover {
+  background: black;
+}
+
+.footer p {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+/* Footer Social Icons */
+.footer .fa-instagram,
+.footer .fa-whatsapp,
+.footer .fa-phone-alt,
+.footer .fa-envelope {
+  margin-right: 8px;
+  color: red;
+  font-size: 16px;
+}
+
+/* Social Icon Circles */
+.social-icons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.icon-circle {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+  position: relative;
+}
+
+.icon-circle i {
+  font-size: 18px;
+}
+
+/* Individual icon colors */
+.icon-circle.instagram {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;       /* vertically center the icon */
+  display: inline-block;   /* make width/height enforceable */
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  text-align: center;      /* center the <i> horizontally */
+  overflow: hidden;        /* clip anything overflowing */
+  padding: 0;              /* remove any leftover padding */
+}
+
+.icon-circle.instagram i {
+  line-height: inherit;    /* ensure the icon vertically centers */
+}
+
+
+
+.icon-circle.whatsapp {
+  background-color: #25D366;
+}
+
+.icon-circle.phone {
+  background-color: #333;
+}
+
+.icon-circle.email {
+  background-color: #0072c6;
+}
+
+/* Hover effect */
+.icon-circle:hover {
+  transform: scale(1.1);
+  opacity: 0.9;
+}
+
+/* Tooltip on hover */
+.icon-circle[title]::after {
+  content: attr(title);
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #222;
+  color: #fff;
+  padding: 3px 8px;
+  font-size: 12px;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.icon-circle:hover::after {
+  opacity: 1;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+
+.hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .hero-content .btn {
+    font-size: 0.95rem;
+    padding: 10px 20px;
+  }
+
+  .nav-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .category-grid {
+    flex-direction: column;
+  }
+
+  .footer-content {
+    flex-direction: column;
+  }
+
+  .usp-items {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .social-icons {
+    justify-content: flex-start;
+  }
+}
